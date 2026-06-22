@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Федеральная информационная система проверки результатов</title>
+
+    <style>
+        body {
+            margin: 0;
+            background: #e9edf2;
+            font-family: Tahoma, Arial, sans-serif;
+            font-size: 14px;
+            color: #000;
+        }
+
+        .header {
+            background: #003366;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            border-bottom: 4px solid #b5b5b5;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 22px;
+            font-weight: normal;
+        }
+
+        .header p {
+            margin: 5px 0 0;
+            font-size: 12px;
+        }
+
+        .container {
+            width: 700px;
+            margin: 30px auto;
+            background: white;
+            border: 1px solid #999;
+            padding: 20px;
+            box-shadow: 0 0 4px rgba(0, 0, 0, 0.15);
+        }
+
+        .info-box {
+            background: #f4f4f4;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 12px;
+            border: 1px solid #999;
+            box-sizing: border-box;
+        }
+
+        button {
+            background: #d8d8d8;
+            border: 1px solid #888;
+            padding: 8px 20px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #c5c5c5;
+        }
+
+        .result-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        .result-table td {
+            border: 1px solid #999;
+            padding: 10px;
+        }
+
+        .result-table td:first-child {
+            width: 250px;
+            background: #f2f2f2;
+        }
+
+        .warning {
+            margin-top: 20px;
+            color: #c00000;
+            font-weight: bold;
+            border: 1px solid #c00000;
+            background: #fff4f4;
+            padding: 12px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .footer {
+            margin-top: 35px;
+            padding-top: 15px;
+            border-top: 1px solid #bdbdbd;
+            text-align: center;
+            color: #555;
+            font-size: 12px;
+        }
+
+        .footer a {
+            color: #003366;
+            text-decoration: none;
+        }
+
+        .notice {
+            margin-top: 15px;
+            color: #666;
+            font-size: 11px;
+            text-align: center;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="header">
+        <h1>Федеральная информационная система проверки результатов</h1>
+        <p>Официальный портал обработки экзаменационных данных</p>
+    </div>
+
+    <div class="container">
+
+        <div id="page1">
+            <div class="info-box">
+                Введите данные для просмотра результатов
+            </div>
+
+            <label>ФИО</label>
+            <input type="text" placeholder="Введите ФИО">
+
+            <label>Номер и серия паспорта</label>
+            <input type="text" placeholder="Введите номер и серию паспорта">
+
+            <button onclick="showResult()">Проверить результаты</button>
+
+            <div class="notice">
+                Использование системы означает согласие с правилами обработки персональных данных.
+            </div>
+        </div>
+
+        <div id="page2" class="hidden">
+
+            <h2>Результаты экзамена</h2>
+
+            <table class="result-table">
+                <tr>
+                    <td>ФИО</td>
+                    <td>Чуджа Эммануэль Элайджа</td>
+                </tr>
+
+                <tr>
+                    <td>Оценка за экзамен</td>
+                    <td>2</td>
+                </tr>
+
+                <tr>
+                    <td>Процент выполнения</td>
+                    <td>19%</td>
+                </tr>
+
+                <tr>
+                    <td>Статус</td>
+                    <td>Обработка завершена</td>
+                </tr>
+            </table>
+
+            <div class="warning">
+                Экзамен не пройден, права на пересдачу нет, ваш статус на рассмотрении исключения из образовательного учреждения.
+            </div>
+
+        </div>
+
+        <div class="footer">
+            © 2011–2026 Информационно-аналитический центр.<br>
+            Все права защищены.<br><br>
+
+            По вопросам работы системы обращаться по телефону:<br>
+            +7 (495) 123-49-66<br><br>
+
+            Техническая поддержка работает с 09:00 до 15:00 (МСК).<br>
+            Версия системы: 3.2.14
+        </div>
+
+    </div>
+
+    <script>
+        function showResult() {
+            document.getElementById("page1").style.display = "none";
+            document.getElementById("page2").style.display = "block";
+        }
+
+    </script>
+
+</body>
+
+</html>
